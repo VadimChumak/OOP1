@@ -15,14 +15,14 @@ namespace SimpleClasses
             {
                 foreach (Phone a in p)
                 {
-                    if (a.GetSurname() == Surname) a.Show();
+                    if (a.surname == Surname) a.Show();
                 }
             }
             public static void FindByName(string Name, Phone[] p)
             {
                 foreach (Phone a in p)
                 {
-                    if (a.GetName() == Name) a.Show();
+                    if (a.name == Name) a.Show();
                 }
             }
             public static void FindByMiddleName(string Middlename, Phone[] p)
@@ -182,10 +182,10 @@ namespace SimpleClasses
                 string[] s = arr[i].Split('|');
                 h[i] = new Phone();
                 h[i].SetSurname(s[0]);
-                h[i].SetName(s[1]);
+                h[i].name=s[1];
                 h[i].SetMiddleName(s[2]);
                 h[i].SetAdress(s[3]);
-                h[i].SetNumber(s[4]);
+                h[i].number = s[4];
                 h[i].SetInCity(int.Parse(s[5]));
                 h[i].SetUnderCity(int.Parse(s[6]));
                 h[i].SetOperator(s[7]);

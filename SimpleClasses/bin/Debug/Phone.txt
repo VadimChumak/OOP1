@@ -1,3 +1,3 @@
-﻿Chumak|Vadim|Oleksandrovich|Zhytomir|0662661123|234|45|MTS
-Chumak|Bob|Oleksandrovich|Zhytomir|0662661123|234|45|MTS
-Chumak|Vadim|Oleksandrovich|Zhytomir|0662661123|234|45|MTS
+﻿Chumak|Vadim|Oleksandrovich|Zhytomir|+380662661123|234|45|MTS
+Chumak|Vadim|Oleksandrovich|Zhytomir|+380662661123|234|45|MTS
+Chumak|Vadim|Oleksandrovich|Zhytomir|+380662661123|234|45|MTS

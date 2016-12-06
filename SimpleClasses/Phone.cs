@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SimpleClasses
@@ -16,6 +17,38 @@ namespace SimpleClasses
         private int InCity;
         private int UnderCity;
         private string Operator;
+        public string operators { set; get; }
+        public string surname
+        {
+            get
+            {
+                return SurName;
+            }
+        }
+        public string number
+        {
+            set
+            {
+                string str = value;
+                string rstr = @"(\+\d{12})";
+                Regex reg = new Regex(rstr);
+                if (reg.IsMatch(str)) Number = value;
+            }
+        }
+        public string name
+        {
+            get
+            {
+                return Name;
+            }
+            set
+            {
+                string str = value;
+                string strr = @"\b([A-ZА-ЯІЇЄ][a-zа-яіїє]+)\b";
+                Regex reg = new Regex(strr);
+                if (reg.IsMatch(str)) Name = value;
+            }
+        }
         public Phone()
         {
             SurName = "Unknown";

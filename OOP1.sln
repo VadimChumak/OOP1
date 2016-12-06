@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleClasses", "SimpleClasses\SimpleClasses.csproj", "{BBE9BC31-2D92-431C-8D25-6E43BFEA0739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "OperatorOverloading\OperatorOverloading.csproj", "{0E943D74-6FA9-4675-81F5-F81FA2B16E31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{BBE9BC31-2D92-431C-8D25-6E43BFEA0739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBE9BC31-2D92-431C-8D25-6E43BFEA0739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBE9BC31-2D92-431C-8D25-6E43BFEA0739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E943D74-6FA9-4675-81F5-F81FA2B16E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E943D74-6FA9-4675-81F5-F81FA2B16E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E943D74-6FA9-4675-81F5-F81FA2B16E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E943D74-6FA9-4675-81F5-F81FA2B16E31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
