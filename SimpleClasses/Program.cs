@@ -14,9 +14,36 @@ namespace SimpleClasses
             Phone[] phone=CreateObject.CreatePhone();
             House[] house = CreateObject.CreateHouse();
             Product[] product = CreateObject.CreateProduct();
-            foreach (House a in house) a.Show();
-            foreach (Product a in product) a.Show();
-            foreach (Phone a in phone) a.Show();
+            ImportProducts import = new ImportProducts("Банани", "Екзотичні фрукти", 12.50, 20, 150, 200, "Індія", "Україна", 3);
+            Hostel hostel = new Hostel("м.Київ", 12, 4, 120, 1980, 23.456, 87.123, "ТуристХост", 299);
+            SellHouse sell_house = new SellHouse("м.Житомир", 2, 2, 45, 2000, 10.56, 25.21, "Петров П.П.", 8999);
+            Abonent abonent = new Abonent("Іванов", "Іван", "Іванович", "м.Житомир , вул.Черняховського , 103Б", "+380625182923", 1000, 500, "МТС", "Чоловіча", true);
+            Worker worker = new Worker("Петров", "Петро", "Петрович", "м.Житомир , вул.Велика Бердичівська , 12А", "+380662661123", 200, 50, "Life", "Чоловіча", false, "охоронець в 'КВАРТАЛ'", 2300);
+            Console.WriteLine("----------PRODUCT<-iMPORT_PRODUCT----------");
+            import.Show();
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("----------HOUSE<-HOSTEL----------");
+            hostel.Show();
+            Console.WriteLine("------------------------------------------");
+            hostel.SaveToFile();
+            Console.WriteLine("----------HOUSE<-SELLHOUSE----------");
+            sell_house.Show();
+            Console.WriteLine("------------------------------------------");
+            sell_house.SaveToFile();
+            Console.WriteLine("----------PHONE<-ABONENT----------");
+            abonent.Show();
+            Console.WriteLine("------------------------------------------");
+            abonent.SaveToFile();
+            Console.WriteLine("----------PHONE<-ABONENT<-WORKER----------");
+            worker.Show();
+            Console.WriteLine("------------------------------------------");
+            worker.SaveToFile();
+            Console.WriteLine("--------------------HOUSE---------------------");
+            foreach (House a in house) { a.Show(); Console.WriteLine("-----------------------------------------"); }
+            Console.WriteLine("--------------------PRODUCT---------------------");
+            foreach (Product a in product) { a.Show(); Console.WriteLine("-----------------------------------------"); }
+            Console.WriteLine("--------------------PHONE---------------------");
+            foreach (Phone a in phone) { a.Show(); Console.WriteLine("-----------------------------------------"); }
             Console.WriteLine("1.Знайти в продуктах");
             Console.WriteLine("2.Знайти в телефонах");
             Console.WriteLine("1.Знайти в будинках");

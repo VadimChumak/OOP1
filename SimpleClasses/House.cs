@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,12 @@ namespace SimpleClasses
 {
     public class House
     {
-        private string Adress;
-        private int Floor;
-        private int CountRoom;
-        private double Squere;
-        private int Year;
-        private double[] Coords;
+        protected string Adress;
+        protected int Floor;
+        protected int CountRoom;
+        protected double Squere;
+        protected int Year;
+        protected double[] Coords;
         public House()
         {
             Adress = "Unknown";
@@ -41,10 +42,11 @@ namespace SimpleClasses
             this.CountRoom=CountRoom;
             this.Squere=Squere;
             this.Year=Year;
+            this.Coords = new double[2];
             this.Coords[0]=Coords1;
             this.Coords[1]=Coords2;
         }
-        public void Show()
+        public virtual void Show()
         {
             Console.WriteLine("Адреса - {0}", Adress);
             Console.WriteLine("Поверх - {0}", Floor);
@@ -52,7 +54,17 @@ namespace SimpleClasses
             Console.WriteLine("Площа - {0} метрів квадратних", Squere);
             Console.WriteLine("Рік побудови - {0}", Year);
             Console.WriteLine("Координати - {0}:{1}",Coords[0] , Coords[1]);
-            Console.WriteLine("------------------------------------------");
+        }
+        public virtual string BuildInfo()
+        {
+            string text = "";
+            text += "Адреса : " + Adress + Environment.NewLine + "Поверх : " + Floor + Environment.NewLine + "Кількість кімнат : " + CountRoom + Environment.NewLine + "Площа : " + Squere + Environment.NewLine + "Рік побудови : " + Year + Environment.NewLine + "Координати : " + Coords[0].ToString() + ":" + Coords[1].ToString() + Environment.NewLine;
+            return text;
+        }
+        public virtual void SaveToFile()
+        {
+            if(!File.Exists("Houses.txt")) File.Create("Houes.txt");
+            File.AppendAllText("Houses.txt", BuildInfo()+"---------------------------------------"+Environment.NewLine);
         }
         public void SetAdress(string Adress) { this.Adress = Adress; }
         public string GetAdress() { return Adress; }

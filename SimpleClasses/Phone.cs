@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,14 +10,14 @@ namespace SimpleClasses
 {
     public class Phone
     {
-        private string SurName;
-        private string Name;
-        private string MiddleName;
-        private string Adress;
-        private string Number;
-        private int InCity;
-        private int UnderCity;
-        private string Operator;
+        protected string SurName;
+        protected string Name;
+        protected string MiddleName;
+        protected string Adress;
+        protected string Number;
+        protected int InCity;
+        protected int UnderCity;
+        protected string Operator;
         public string operators { set; get; }
         public string surname
         {
@@ -82,7 +83,24 @@ namespace SimpleClasses
             this.UnderCity = UnderCity;
             this.Operator = Operator;
         }
-        public void Show()
+        public virtual void SaveToFile()
+        {
+            if (File.Exists(@"Phones.txt"))
+            {
+                string text = "";
+                text += "Фамілія - " + SurName + Environment.NewLine + "Ім'я - " + Name + Environment.NewLine + "По-Батькові - " + MiddleName + Environment.NewLine + "Адреса - " + Adress + Environment.NewLine + "Номер телефону - " + Number + Environment.NewLine + "Час внутрішньо-міських розмов -  " + InCity + Environment.NewLine + "Час міжміських розмов - " + UnderCity + Environment.NewLine + "Оператор - " + Operator + Environment.NewLine + "------------------------------------------" + Environment.NewLine;
+                File.AppendAllText("Phones.txt", text);
+            }
+            else
+            {
+                File.Create("Phones.txt");
+                string text = "";
+                text += "Фамілія - " + SurName + Environment.NewLine + "Ім'я - " + Name + Environment.NewLine + "По-Батькові - " + MiddleName + Environment.NewLine + "Адреса - " + Adress + Environment.NewLine + "Номер телефону - " + Number + Environment.NewLine + "Час внутрішньо-міських розмов -  " + InCity + Environment.NewLine + "Час міжміських розмов - " + UnderCity + Environment.NewLine + "Оператор - " + Operator + Environment.NewLine + "------------------------------------------" + Environment.NewLine;
+                File.AppendAllText("Phones.txt", text);
+            }
+
+        }
+        public virtual void Show()
         {
             Console.WriteLine("Фамілія - {0}",SurName);
             Console.WriteLine("Ім'я - {0}",Name);
@@ -92,7 +110,6 @@ namespace SimpleClasses
             Console.WriteLine("Час внутрішньо-міських розмов - {0} хв", InCity);
             Console.WriteLine("Час міжміських розмов - {0} хв", UnderCity);
             Console.WriteLine("Оператор - {0}", Operator);
-            Console.WriteLine("------------------------------------------");
         }
         public void SetSurname(string SurName) { this.SurName = SurName; }
         public string GetSurname() { return SurName; }

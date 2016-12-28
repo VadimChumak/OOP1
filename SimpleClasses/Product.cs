@@ -8,12 +8,12 @@ namespace SimpleClasses
 {
     public class Product
     {
-        private string Name;
-        private string Creater;
-        private double Price;
-        private double ShelfLife;
-        private int Count;
-        private double PeriodStorage;
+        protected string Name;
+        protected string Creater;
+        protected double Price;
+        protected double ShelfLife;
+        protected int Count;
+        protected double PeriodStorage;
 
         public Product()
         {
@@ -42,7 +42,7 @@ namespace SimpleClasses
             Count = a.Count;
             PeriodStorage = a.PeriodStorage;
         }
-        public void Show()
+        public virtual void Show()
         {
             Console.WriteLine("Назва - {0}", Name);
             Console.WriteLine("Виробник - {0}", Creater);
@@ -50,7 +50,11 @@ namespace SimpleClasses
             Console.WriteLine("Термін зберігання - {0}", ShelfLife);
             Console.WriteLine("Кількість - {0}", Count);
             Console.WriteLine("Термін придатності - {0}", PeriodStorage);
-            Console.WriteLine("------------------------------------------");
+        }
+        public virtual bool AreUsable()
+        {
+            if (ShelfLife > PeriodStorage) return false;
+            else return true;
         }
         public void SetName(string Name) { this.Name = Name; }
         public string GetName() { return Name;}
